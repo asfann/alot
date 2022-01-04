@@ -18,7 +18,7 @@ class Crypto {
     data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
   );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, Object> toJson() => {
     "status": status.toJson(),
     "data": List<dynamic>.from(data.map((x) => x.toJson())),
   };

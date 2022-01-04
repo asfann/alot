@@ -1,8 +1,17 @@
+import 'dart:io';
+
 import 'package:alot/view/crypto_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
+
+  FlutterError.onError = (FlutterErrorDetails details){
+    FlutterError.presentError(details);
+    if(kReleaseMode)
+      exit(1);
+  };
 }
 
 class MyApp extends StatelessWidget {
